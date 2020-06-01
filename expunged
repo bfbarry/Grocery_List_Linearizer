@@ -1,0 +1,16 @@
+for walk in possible_paths:
+        #print('walk: ', walk)
+        flat = [elt for edge in walk for elt in edge] # from https://stackoverflow.com/questions/3204245/how-do-i-convert-a-tuple-of-tuples-to-a-one-dimensional-list-using-list-comprehe
+        #print('flat: ', flat)
+        unique = set(flat) #unique vertices from flattened list
+        counts = [flat.count(i) for i in flat]
+        #print('counts: ', counts)
+        
+#         if max(counts) == 2 and unique == set(target_isles): #and not disconnected:
+#             one_indeces = [n_i for n_i, i in enumerate(counts) if i ==1]
+#             print('walk: ', walk)
+#             print('indeces of degree 1 vertices: ', one_indeces)
+#             disconnected = bool(one_indeces[1] - one_indeces[0] == 1 and one_indeces[0]%2 ==0)
+#             print('disconnected bool: ', str(disconnected))
+#             if not disconnected:
+#                 hamiltonian_paths.append(walk)
